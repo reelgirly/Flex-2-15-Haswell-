@@ -17,3 +17,20 @@
 - xHCI Mode:		Smart Auto
 - Graphics:			Discrete
 - Bootorder:		Create entry with "Easy UEFI" pointing to /EFI/CLOVER/CLOVERX64.efi on your EFI partition
+
+**Plists to replace:**
+
+- in FakeSMC.kext / FAN and AC keys and 60Watts AC description
+- in VoodooPS2Keyboard.kext / located in VoodooPS2Controller.kext/Contents/PlugIns / edited keymap for Flex 2-15
+
+**Kexts to patch:**
+
+- AppleGraphicsPowerManagement.kext / put lowest GPU-freq to 200Mhz aand enable all powerstates
+- AppleUSBCardReader.kext / to make SDcardReader AppleCompatible
+
+**Clover**
+
+- use included config.plist
+
+**ICC-Profile:**
+- put profile into ~/Library/ColorSync/Profiles and select for internal display
