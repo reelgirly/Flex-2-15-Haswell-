@@ -158,7 +158,10 @@ Follow this Guide to make power management complete after booting with attached 
 
 FakeSMC.kext/Info.list
 - in FakeSMC.kext / added FANs and AC with 60W
-- in VoodooPS2Keyboard.kext / located in VoodooPS2Controller.kext/Contents/PlugIns / edited keymap for Flex 2-15
+
+VoodooPS2Keyboard.kext
+- located in VoodooPS2Controller.kext/Contents/PlugIns
+- edited keymap for Flex 2-15
 
 **Kexts to patch by hand:**
 
@@ -166,7 +169,8 @@ AppleGraphicsPowerManagement.kext/changes.txt
 - put lowest GPUFrequency to 200Mhz and enable all powerstates
 
 AppleUSBCardReader.kext/changes.txt
-- located in AppleStorageDrivers.kext/Contents/PlugIns / to make internal SDCardReader Apple compatible
+- located in AppleStorageDrivers.kext/Contents/PlugIns
+- make internal SDCardReader Apple compatible
 
 IOBluetoothFamily.kext/changes.txt
 - keeps USB 2.0 working if you are not having an AirPort compatible wifi card
