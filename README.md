@@ -146,7 +146,7 @@ You should have there:
 
 **Clover:**
 
-1. clover/config.plist
+clover/config.plist
 - copy config.plist to /EFI/CLOVER on your EFI partition
 
 **Native Powermanagement:**
@@ -156,23 +156,23 @@ Follow this Guide to make power management complete after booting with attached 
 
 **Plists to replace:**
 
-1. FakeSMC.kext/Info.list
+FakeSMC.kext/Info.list
 - in FakeSMC.kext / added FANs and AC with 60W
 - in VoodooPS2Keyboard.kext / located in VoodooPS2Controller.kext/Contents/PlugIns / edited keymap for Flex 2-15
 
 **Kexts to patch by hand:**
 
-1. AppleGraphicsPowerManagement.kext/changes.txt
+AppleGraphicsPowerManagement.kext/changes.txt
 - put lowest GPUFrequency to 200Mhz and enable all powerstates
 
-2. AppleUSBCardReader.kext/changes.txt
+AppleUSBCardReader.kext/changes.txt
 - located in AppleStorageDrivers.kext/Contents/PlugIns / to make internal SDCardReader Apple compatible
 
-3. IOBluetoothFamily.kext/changes.txt
+IOBluetoothFamily.kext/changes.txt
 - keeps USB 2.0 working if you are not having an AirPort compatible wifi card
 - keeps LogitechControlCenter working to use a Logitech USB Mouse
 
 **ICC-Profile:**
 
-1. display/icc_profile.txt
+display/icc_profile.txt
 - download from link and put profile into ~/Library/ColorSync/Profiles and apply for internal display
