@@ -77,7 +77,7 @@ Install to /System/Library/Extensions:
 
 **Necessary DSDT Patches:**
 
-0. DSDT
+**DSDT**
 - [syn] Fix ADBG Error
 - [syn] Remove _DSM methods
 - [sys] IRQ Fix
@@ -102,16 +102,16 @@ Install to /System/Library/Extensions:
 - patches/dsdt_keyboard.txt
 - patches/dsdt_nvidia.txt
 
-1. SSDT-0
+**SSDT-0**
 - [syn] Remove _DSM methods
 
-2. SSDT-2
+**SSDT-2**
 - [syn] Remove _PSS placeholders
 
-3. SSDT-3
+**SSDT-3**
 - none right now
 
-4. SSDT-8
+**SSDT-8**
 - [syn] Remove _DSM methods
 - [igpu] Haswell HD4400/HD4600/HD5000
 - [igpu] Brightness fix (Haswell/Broadwell)
@@ -121,10 +121,10 @@ Install to /System/Library/Extensions:
 - patches/ssdt-8_graphics.txt
 - patches/ssdt-8_hdmi.txt
 
-5. SSDT-9
+**SSDT-9**
 - patches/ssdt-9_nvidia.txt
 
-6. SSDT-10
+**SSDT-10**
 - [syn] Remove _DSM methods
 
 **Clover:**
