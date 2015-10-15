@@ -24,6 +24,16 @@ Work in Progress
 
 - http://www.tonymacx86.com/yosemite-desktop-guides/144426-how-install-os-x-yosemite-using-clover.html
 
+To install OSX along to your OEM Windows install,
+first shrink your windows C: partition with http://www.disk-partition.com/free-partition-manager.html
+and then install OSX from your just created CloverUSB to free space.
+Not sure if OneKeyRecovery still will work as im using Paragon and didnt test it.
+
+**Must Read Guide**
+
+- http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
+- http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html
+
 **DSDT/SDDTs:**
 
 - grep with Clover (fn+F4 and/or F4 at Clover boot screen) / files will be placed in /EFI/CLOVER/ACPI/origin
@@ -32,22 +42,25 @@ Work in Progress
 
 **Necessary DSDT Patches:**
 
-1. DSDT
+0. DSDT
+-
+
+1. SSDT-0
 -
 
 2. SSDT-2
 -
 
-2. SSDT-3
+3. SSDT-3
 -
 
-2. SSDT-8
+4. SSDT-8
 -
 
-2. SSDT-9
+5. SSDT-9
 -
 
-2. SSDT-10
+6. SSDT-10
 -
 
 **Necessary Kexts:**

@@ -81,7 +81,7 @@
 		<key>SortedOrder</key>
 		<array>
 			<string>SSDT.aml</string>
-			<string>SSDT-1.aml</string>
+			<string>SSDT-0.aml</string>
 			<string>SSDT-2.aml</string>
 			<string>SSDT-3.aml</string>
 			<string>SSDT-8.aml</string>
