@@ -1,0 +1,8 @@
+#graphics_PTS_WAK-disable.txt
+
+into method label _WAK code_regex (Return\s+\(.*) replace_matched
+begin
+External(\\_SB.PCI0.RP05.PEGP._OFF, MethodObj)\n
+If (CondRefOf(\\_SB.PCI0.RP05.PEGP._OFF)) { \\_SB.PCI0.RP05.PEGP._OFF() }\n
+%1
+end;

@@ -78,25 +78,54 @@ Install to /System/Library/Extensions:
 **Necessary DSDT Patches:**
 
 0. DSDT
--
+- [syn] Fix ADBG Error
+- [syn] Remove _DSM methods
+- [sys] IRQ Fix
+- [sys] SMBUS Fix
+- [sys] RTC Fix
+- [sys] Shutdown Fix v2
+- [sys] HPET Fix
+- [sys] OS Check Fix (Windows 8)
+- [sys] AC Adapter Fix
+- [sys] Add MCHC
+- [sys] Fix _WAK Arg0 v2
+- [sys] Fix Mutex with non-zero SyncLevel
+- [sys] Add IMEI
+- [sys] Haswell LPC
+- [usb] USB3 _PRW(0x6D) and Rename XHC to XHC1
+- [usb] 7-series/8-series USB
+- [audio] Audio Layout 3
+- [igpu] Rename GFX0 to IGPU
+- [igpu] Rename PCI0.GFX0 to PCI0.IGPU
+- [igpu] Rename B0D3 to HDAU
+- patches/dsdt_fan.txt
+- patches/dsdt_keyboard.txt
+- patches/dsdt_nvidia.txt
 
 1. SSDT-0
--
+- [syn] Remove _DSM methods
 
 2. SSDT-2
--
+- [syn] Remove _PSS placeholders
 
 3. SSDT-3
--
+- none right now
 
 4. SSDT-8
--
+- [syn] Remove _DSM methods
+- [igpu] Haswell HD4400/HD4600/HD5000
+- [igpu] Brightness fix (Haswell/Broadwell)
+- [igpu] Rename GFX0 to IGPU
+- [igpu] Rename PCI0.GFX0 to PCI0.IGPU
+- [igpu] Rename B0D3 to HDAU
+- patches/ssdt-8_graphics.txt
+- patches/ssdt-8_hdmi.txt
 
 5. SSDT-9
--
+- patches/ssdt-9_nvidia.txt
 
 6. SSDT-10
--
+- [syn] Remove _DSM methods
 
 **Clover:**
 
