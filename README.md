@@ -1,4 +1,4 @@
-# Flex-2-15-Haswell-
+# Flex-2-15-Haswell-Yosemite-
 
 Work in Progress
 
@@ -11,6 +11,7 @@ Work in Progress
 - Lan:            RTL8111/8168/8411
 - Wifi/BT:        RTL8723BE
 - Sound:          Realtek ALC233
+- Nvram:          Native
 
 **Recommend BIOS Settings:**
 
@@ -30,14 +31,22 @@ http://www.disk-partition.com/free-partition-manager.html
 and then create by your CloverUSB using DiskUtility a "HFS Extended Journaled partition" into the free space.
 Not sure if OneKeyRecovery still working after this as i didnt test it.
 Now install OSX into the newly created partition.
-After installing OSX, install Clover into your already existing EFI partiton as UEFI only.
-But before rename /EFI/Boot to /EFI/Boot_org to keep your Microsoft efi file.
 
-**Must Read Guide**
+After installing OSX and booting into, install Clover into your already existing HDDs EFI partiton as UEFI only.
+**Attention!** Rename the folder /EFI/Boot to /EFI/Boot_org to keep your Microsoft efi file before installing Clover.
 
-- http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
+**Choose OsxAptioFix2Drv-64.efi instead OsxAptioFixDrv-64.efi when installing clover to your HDDs EFI.**
+
+
+**Clover:**
+
+clover/config.plist
+- Now copy the here attached config.plist to /EFI/CLOVER on your EFI partition
+
 
 **Necessary Kexts:**
+
+Then install these necessary kexts.
 
 - http://www.hwsensors.com/releases
 - https://github.com/RehabMan/OS-X-ACPI-Battery-Driver
@@ -48,7 +57,7 @@ But before rename /EFI/Boot to /EFI/Boot_org to keep your Microsoft efi file.
 - https://github.com/the-darkvoid/EAPD-Codec-Commander
 - http://www.insanelymac.com/forum/topic/298663-applehda-for-yosemite/ choose **AppleHDA-272.18.1-ALC233.zip**
 
-Install to /EFI/CLOVER/kexts/10.10:
+Copy to /EFI/CLOVER/kexts/10.10:
 
 - FakeSMC.kext
 - FakePCIID.kext
@@ -56,7 +65,7 @@ Install to /EFI/CLOVER/kexts/10.10:
 - RealtekRTL8111.kext
 - VoodooPS2Controller.kext
 
-Install to /System/Library/Extensions:
+Install to /System/Library/Extensions with "Kext Wizard":
 
 - FakeSMC.kext
 - ACPISensors.kext
@@ -71,17 +80,30 @@ Install to /System/Library/Extensions:
 - FakePCIID_XHCIMux.kext
 - IntelBacklight.kext
 
+After being ready, repair permissions with DiskUtility and reboot into Clover.
+
+
+**Must Read Guide**
+
+Get into DSDT/SSDT patching and install the necessary tools from this guide also implement the needeed repository into MaciASL.
+
+- http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
+
+
 **DSDT/SDDTs:**
 
-- grep with Clover (fn+F4 and/or F4 at Clover boot screen) / files will be placed in /EFI/CLOVER/ACPI/origin
-- remove everything except DSDT.aml and SSDT*.aml
+- Now reboot into Clover and grep the ACPI files (press fn+F4 and/or F4 at Clover boot screen)
+- files will be placed in /EFI/CLOVER/ACPI/origin
+- move all files o another folder
+- remove everything except DSDT.aml and the SSDT*.aml files
 - remove SSDT-1.aml, SSDT-4x.aml
-- disassembly all at once after moving to another folder by "iasl -da -dl *.aml"
+- disassembly all at once by "iasl -da -dl *.aml" in terminal where files are located
 - then delete/move all AML files and just leave the DSL in this folder
+
 
 **Necessary DSDT Patches:**
 
-**After applying all patches to each DSL file check if it compiles without ERRORS**
+**After applying all patches to each DSL file check if it compiles without ERRORS and save it**
 
 **DSDT.dsl**
 - [syn] Fix ADBG Error
@@ -133,7 +155,7 @@ Install to /System/Library/Extensions:
 **SSDT-10.dsl**
 - [syn] Remove _DSM methods
 
-If all files compiled without errors, dont forget to save and open terminal again in folder where the files are located and compile them all at once by "iasl *.dsl".
+If all files compiled without errors open terminal again in folder where the files are located and compile them all at once by "iasl *.dsl".
 
 Now copy ur compiled **AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition
 
@@ -147,15 +169,12 @@ You should have there:
 - SSDT-9.aml
 - SSDT-10.aml
 
-**Clover:**
-
-clover/config.plist
-- copy config.plist to /EFI/CLOVER on your EFI partition
 
 **Native Powermanagement:**
 
-Follow this Guide to make power management complete after booting with attached Clover config.plist
+Follow this Guide to make power management complete
 - http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html
+
 
 **Plists to replace:**
 
@@ -165,6 +184,7 @@ FakeSMC.kext/Info.list
 VoodooPS2Keyboard.kext/Info.plist
 - located in VoodooPS2Controller.kext/Contents/PlugIns
 - edited keymap for Flex 2-15
+
 
 **Kexts to patch by hand:**
 
@@ -178,6 +198,7 @@ AppleUSBCardReader.kext/changes.txt
 IOBluetoothFamily.kext/changes.txt
 - keeps USB 2.0 working if you are not having an AirPort compatible wifi card
 - keeps LogitechControlCenter working to use a Logitech USB Mouse
+
 
 **ICC-Profile:**
 
