@@ -28,11 +28,13 @@ Work in Progress
 To install OSX along to your OEM Windows install,
 first shrink your windows C: partition with
 http://www.disk-partition.com/free-partition-manager.html
-and then create by your CloverUSB using DiskUtility a "HFS Extended Journaled partition" into the free space.
+and then create by your CloverUSB using DiskUtility a "HFS Extended Journaled" partition into the free space.
 Not sure if OneKeyRecovery still working after this as i didnt test it.
+
 Now install OSX into the newly created partition.
 
 After installing OSX and booting into, install Clover into your already existing HDDs EFI partiton as UEFI only.
+
 **Attention!** Rename the folder /EFI/Boot to /EFI/Boot_org to keep your Microsoft efi file before installing Clover.
 
 **Choose OsxAptioFix2Drv-64.efi instead OsxAptioFixDrv-64.efi when installing clover to your HDDs EFI.**
@@ -85,7 +87,7 @@ After being ready, repair permissions with DiskUtility and reboot into Clover.
 
 **Must Read Guide**
 
-Get into DSDT/SSDT patching and install the necessary tools from this guide also implement the needeed repository into MaciASL.
+Get into DSDT/SSDT patching and install the necessary tools from this guide. Also implement the needed repository into MaciASL.
 
 - http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
 
@@ -94,7 +96,7 @@ Get into DSDT/SSDT patching and install the necessary tools from this guide also
 
 - Now reboot into Clover and grep the ACPI files (press fn+F4 and/or F4 at Clover boot screen)
 - files will be placed in /EFI/CLOVER/ACPI/origin
-- move all files o another folder
+- move all files to another folder
 - remove everything except DSDT.aml and the SSDT*.aml files
 - remove SSDT-1.aml, SSDT-4x.aml
 - disassembly all at once by "iasl -da -dl *.aml" in terminal where files are located
@@ -103,7 +105,7 @@ Get into DSDT/SSDT patching and install the necessary tools from this guide also
 
 **Necessary DSDT Patches:**
 
-**After applying all patches to each DSL file check if it compiles without ERRORS and save it**
+**After applying all patches to each DSL file check if it compiles without ERRORS and save it.**
 
 **DSDT.dsl**
 - [syn] Fix ADBG Error
@@ -172,7 +174,7 @@ You should have there:
 
 **Native Powermanagement:**
 
-Follow this Guide to make power management complete
+Follow this Guide to complete native power management.
 - http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html
 
 
