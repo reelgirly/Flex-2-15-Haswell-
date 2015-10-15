@@ -1,21 +1,21 @@
-Change all found
+**Change all found**
 			<key>Physical Interconnect Location</key>
 			<string>Internal</string>
-to
+**to**
 			<key>Physical Interconnect Location</key>
 			<string>External</string>
-and
+**and**
 			<key>Vendor Identification</key>
 			<string>APPLE</string>
-to
+**to**
 			<key>Vendor Identification</key>
 			<string>Genesys Logic</string>
-and
+**and**
 			<key>idProduct</key>
 			<integer>33795</integer>
 			<key>idVendor</key>
 			<integer>1452</integer>
-to
+**to**
 			<key>idProduct</key>
 			<integer>1863</integer>
 			<key>idVendor</key>
