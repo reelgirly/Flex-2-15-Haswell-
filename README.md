@@ -25,14 +25,49 @@ Work in Progress
 - http://www.tonymacx86.com/yosemite-desktop-guides/144426-how-install-os-x-yosemite-using-clover.html
 
 To install OSX along to your OEM Windows install,
-first shrink your windows C: partition with http://www.disk-partition.com/free-partition-manager.html
+first shrink your windows C: partition with
+http://www.disk-partition.com/free-partition-manager.html
 and then install OSX from your just created CloverUSB to free space.
-Not sure if OneKeyRecovery still will work as im using Paragon and didnt test it.
+Not sure if OneKeyRecovery still working after this as i didnt test it.
 
 **Must Read Guide**
 
 - http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
-- http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html
+
+**Necessary Kexts:**
+
+- http://www.hwsensors.com/releases
+- https://github.com/RehabMan/OS-X-ACPI-Battery-Driver
+- https://github.com/RehabMan/OS-X-Fake-PCI-ID
+- https://github.com/RehabMan/OS-X-Intel-Backlight
+- https://github.com/RehabMan/OS-X-Realtek-Network
+- https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller
+- https://github.com/the-darkvoid/EAPD-Codec-Commander
+- http://www.insanelymac.com/forum/topic/298663-applehda-for-yosemite/ choose **AppleHDA-272.18.1-ALC233.zip**
+
+Install to /EFI/CLOVER/kexts/10.10:
+
+- FakeSMC.kext
+- FakePCIID.kext
+- FakePCIID_HD4600_HD4400.kext
+- RealtekRTL8111.kext
+- VoodooPS2Controller.kext
+
+Install to /System/Library/Extensions:
+
+- FakeSMC.kext
+- ACPISensors.kext
+- CPUSensors.kext
+- FakePCIID.kext
+- FakePCIID_HD4600_HD4400.kext
+- RealtekRTL8111.kext
+- VoodooPS2Controller.kext
+
+- ACPIBatteryManager.kext
+- AppleHDA.kext
+- CodecCommander.kext
+- FakePCIID_XHCIMux.kext
+- IntelBacklight.kext
 
 **DSDT/SDDTs:**
 
@@ -63,38 +98,14 @@ Not sure if OneKeyRecovery still will work as im using Paragon and didnt test it
 6. SSDT-10
 -
 
-**Necessary Kexts:**
+**Clover:**
 
-- http://www.hwsensors.com/releases
-- https://github.com/RehabMan/OS-X-Realtek-Network
-- https://github.com/RehabMan/OS-X-Fake-PCI-ID
-- https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller
-- https://github.com/RehabMan/OS-X-Intel-Backlight
-- https://github.com/the-darkvoid/EAPD-Codec-Commander
-- http://www.insanelymac.com/forum/topic/298663-applehda-for-yosemite/ choose **AppleHDA-272.18.1-ALC233.zip**
+- use included config.plist
 
-Install to /EFI/CLOVER/kexts/10.10:
+**Native Powermanagement:**
 
-- FakeSMC.kext
-- FakePCIID.kext
-- FakePCIID_HD4600_HD4400.kext
-- RealtekRTL8111.kext
-- VoodooPS2Controller.kext
-
-Install to /System/Library/Extensions:
-
-- FakeSMC.kext
-- ACPISensors.kext
-- CPUSensors.kext
-- FakePCIID.kext
-- FakePCIID_HD4600_HD4400.kext
-- RealtekRTL8111.kext
-- VoodooPS2Controller.kext
-
-- AppleHDA.kext
-- CodecCommander.kext
-- FakePCIID_XHCIMux.kext
-- IntelBacklight.kext
+Follow this Guide to make power management complete after booting with attached Clover config.plist
+- http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html
 
 **Plists to replace:**
 
@@ -105,10 +116,6 @@ Install to /System/Library/Extensions:
 
 - AppleGraphicsPowerManagement.kext / put lowest GPUFrequency to 200Mhz and enable all powerstates
 - AppleUSBCardReader.kext / to make internal SDCardReader Apple compatible
-
-**Clover:**
-
-- use included config.plist
 
 **ICC-Profile:**
 - put profile into ~/Library/ColorSync/Profiles and select for internal display
