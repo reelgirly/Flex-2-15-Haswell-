@@ -194,8 +194,6 @@ Follow this Guide to complete native power management.
 
 Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 
-Reboot.
-
 
 **Plists to replace:**
 
@@ -238,10 +236,10 @@ IOBluetoothFamily.kext/changes.txt
 
 Find and Delete mentioned kexts from /System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns
 
-**After being ready, repair permissions with DiskUtility and rebuild KernelCaches with "Kext Wizard" and reboot.**
-
 
 **ICC-Profile:**
 
 display/icc_profile.txt
 - download from link and put profile into ~/Library/ColorSync/Profiles and apply for internal display
+
+**After being ready, repair permissions with DiskUtility and rebuild KernelCaches with "Kext Wizard" and reboot.**
