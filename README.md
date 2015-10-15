@@ -62,7 +62,6 @@ Install to /System/Library/Extensions:
 - FakePCIID_HD4600_HD4400.kext
 - RealtekRTL8111.kext
 - VoodooPS2Controller.kext
-
 - ACPIBatteryManager.kext
 - AppleHDA.kext
 - CodecCommander.kext
@@ -72,12 +71,16 @@ Install to /System/Library/Extensions:
 **DSDT/SDDTs:**
 
 - grep with Clover (fn+F4 and/or F4 at Clover boot screen) / files will be placed in /EFI/CLOVER/ACPI/origin
-- remove everything expect DSDT.aml and SSDT*.aml, also remove SSDT-1.aml, SSDT-4x.aml, SSDT-5x.aml, SSDT-6x.aml, SSDT-7x.aml
+- remove everything expect DSDT.aml and SSDT*.aml
+- remove SSDT-1.aml, SSDT-4x.aml
 - disassembly all at once after moving to another folder by "iasl -da -dl *.aml"
+- then delete/move all AML files and just leave the DSL in this folder
 
 **Necessary DSDT Patches:**
 
-**DSDT**
+**After applying all patches to each DSL file check if it compiles without ERRORS**
+
+**DSDT.dsl**
 - [syn] Fix ADBG Error
 - [syn] Remove _DSM methods
 - [sys] IRQ Fix
@@ -102,16 +105,16 @@ Install to /System/Library/Extensions:
 - patches/dsdt_keyboard.txt
 - patches/dsdt_nvidia.txt
 
-**SSDT-0**
+**SSDT-0.dsl**
 - [syn] Remove _DSM methods
 
-**SSDT-2**
+**SSDT-2.dsl**
 - [syn] Remove _PSS placeholders
 
-**SSDT-3**
+**SSDT-3.dsl**
 - none right now
 
-**SSDT-8**
+**SSDT-8.dsl**
 - [syn] Remove _DSM methods
 - [igpu] Haswell HD4400/HD4600/HD5000
 - [igpu] Brightness fix (Haswell/Broadwell)
@@ -121,15 +124,30 @@ Install to /System/Library/Extensions:
 - patches/ssdt-8_graphics.txt
 - patches/ssdt-8_hdmi.txt
 
-**SSDT-9**
+**SSDT-9.dsl**
 - patches/ssdt-9_nvidia.txt
 
-**SSDT-10**
+**SSDT-10.dsl**
 - [syn] Remove _DSM methods
+
+If all files compiled without errors, dont forget to save and open terminal again in folder where the files are located and compile them all at once by "iasl *.dsl".
+
+Now copy ur compiled **AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition
+
+You should have there:
+
+- DSDT.aml
+- SSDT-0.aml
+- SSDT-2.aml
+- SSDT-3.aml
+- SSDT-8.aml
+- SSDT-9.aml
+- SSDT-10.aml
 
 **Clover:**
 
-- use included config.plist
+1. clover/config.plist
+- copy config.plist to /EFI/CLOVER on your EFI partition
 
 **Native Powermanagement:**
 
@@ -138,13 +156,23 @@ Follow this Guide to make power management complete after booting with attached 
 
 **Plists to replace:**
 
+1. FakeSMC.kext/Info.list
 - in FakeSMC.kext / added FANs and AC with 60W
 - in VoodooPS2Keyboard.kext / located in VoodooPS2Controller.kext/Contents/PlugIns / edited keymap for Flex 2-15
 
-**Kexts to patch:**
+**Kexts to patch by hand:**
 
-- AppleGraphicsPowerManagement.kext / put lowest GPUFrequency to 200Mhz and enable all powerstates
-- AppleUSBCardReader.kext / to make internal SDCardReader Apple compatible
+1. AppleGraphicsPowerManagement.kext/changes.txt
+- put lowest GPUFrequency to 200Mhz and enable all powerstates
+
+2. AppleUSBCardReader.kext/changes.txt
+- located in AppleStorageDrivers.kext/Contents/PlugIns / to make internal SDCardReader Apple compatible
+
+3. IOBluetoothFamily.kext/changes.txt
+- keeps USB 2.0 working if you are not having an AirPort compatible wifi card
+- keeps LogitechControlCenter working to use a Logitech USB Mouse
 
 **ICC-Profile:**
-- put profile into ~/Library/ColorSync/Profiles and select for internal display
+
+1. display/icc_profile.txt
+- download from link and put profile into ~/Library/ColorSync/Profiles and apply for internal display

@@ -3,6 +3,3 @@
 BroadcomBluetoothHostControllerUSBTransport.kext
 CSRBluetoothHostControllerUSBTransport.kext
 IOBluetoothHostControllerUSBTransport.kext
-
-- keeps USB 2.0 working if you are not having an AirPort compatible wifi card
-- keeps Logitech Control Center Working to fully use a Logitech USB Mouse
