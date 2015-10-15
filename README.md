@@ -25,10 +25,10 @@
 
 **Kexts to patch:**
 
-- AppleGraphicsPowerManagement.kext / put lowest GPU-freq to 200Mhz aand enable all powerstates
-- AppleUSBCardReader.kext / to make SDcardReader AppleCompatible
+- AppleGraphicsPowerManagement.kext / put lowest GPUFrequency to 200Mhz and enable all powerstates
+- AppleUSBCardReader.kext / to make internal SDCardReader Apple compatible
 
-**Clover**
+**Clover:**
 
 - use included config.plist
 
