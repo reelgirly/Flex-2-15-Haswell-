@@ -27,8 +27,11 @@ Work in Progress
 To install OSX along to your OEM Windows install,
 first shrink your windows C: partition with
 http://www.disk-partition.com/free-partition-manager.html
-and then install OSX from your just created CloverUSB to free space.
+and then create by your CloverUSB using DiskUtility a "HFS Extended Journaled partition" into the free space.
 Not sure if OneKeyRecovery still working after this as i didnt test it.
+Now install OSX into the newly created partition.
+After installing OSX, install Clover into your already existing EFI partiton as UEFI only.
+But before rename /EFI/Boot to /EFI/Boot_org to keep your Microsoft efi file.
 
 **Must Read Guide**
 
@@ -71,7 +74,7 @@ Install to /System/Library/Extensions:
 **DSDT/SDDTs:**
 
 - grep with Clover (fn+F4 and/or F4 at Clover boot screen) / files will be placed in /EFI/CLOVER/ACPI/origin
-- remove everything expect DSDT.aml and SSDT*.aml
+- remove everything except DSDT.aml and SSDT*.aml
 - remove SSDT-1.aml, SSDT-4x.aml
 - disassembly all at once after moving to another folder by "iasl -da -dl *.aml"
 - then delete/move all AML files and just leave the DSL in this folder
@@ -159,7 +162,7 @@ Follow this Guide to make power management complete after booting with attached 
 FakeSMC.kext/Info.list
 - in FakeSMC.kext / added FANs and AC with 60W
 
-VoodooPS2Keyboard.kext
+VoodooPS2Keyboard.kext/Info.plist
 - located in VoodooPS2Controller.kext/Contents/PlugIns
 - edited keymap for Flex 2-15
 
