@@ -28,29 +28,7 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>Cpu0Ist</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuPm</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>sensrhub</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
 				<string>PtidDevc</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -62,13 +40,35 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>NvOptTbl</string>
+				<string>SgPch</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>SgPch</string>
+				<string>NvOptTbl</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>DMAR</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>sensrhub</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Ist</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuPm</string>
 			</dict>
 		</array>
 		<key>SSDT</key>
@@ -184,7 +184,7 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Enable 128MB DVMT-prealloc, 48MB framebuffer, 48MB cursor bytes, 0x0a260006</string>
+				<string>Enable 9MB cursor bytes, 0x0a260006</string>
 				<key>Find</key>
 				<data>
 				BgAmCgEDAwMAAAACAAAwAQAAYAA=
@@ -193,21 +193,7 @@
 				<string>disabled:AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>
-				BgAmCgEDAwMAAAAIAAAAAwAAAAM=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0105(12), 0x0a260005 0x0a260006, 0x0d220003, 0x0a2e000a, 0x0a26000a</string>
-				<key>Find</key>
-				<data>
-				AQUJAAAEAACHAAAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				AQUSAAAIAACHAAAA
+				BgAmCgEDAwMAAAACAAAwAQAAkAA=
 				</data>
 			</dict>
 			<dict>
@@ -226,16 +212,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Boot graphics glitch, 10.10.2/10.10.3</string>
+				<string>Boot graphics glitch, 10.10.x/10.11.x (credit lisai9093, cecekpawon)</string>
 				<key>Find</key>
 				<data>
-				QYjE6xE=
+				AQAAdRc=
 				</data>
 				<key>Name</key>
-				<string>disabled:IOGraphicsFamily</string>
+				<string>IOGraphicsFamily</string>
 				<key>Replace</key>
 				<data>
-				QYjE6zE=
+				AQAA6xc=
 				</data>
 			</dict>
 			<dict>
@@ -254,7 +240,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Enable 9MB cursor bytes, 0x0a260006</string>
+				<string>Enable 128MB DVMT-prealloc, 48MB framebuffer, 48MB cursor bytes, 0x0a260006</string>
 				<key>Find</key>
 				<data>
 				BgAmCgEDAwMAAAACAAAwAQAAYAA=
@@ -263,21 +249,7 @@
 				<string>disabled:AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>
-				BgAmCgEDAwMAAAACAAAwAQAAkAA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.10.x/10.11.x (credit lisai9093, cecekpawon)</string>
-				<key>Find</key>
-				<data>
-				AQAAdRc=
-				</data>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAA6xc=
+				BgAmCgEDAwMAAAAIAAAAAwAAAAM=
 				</data>
 			</dict>
 			<dict>
@@ -292,6 +264,34 @@
 				<key>Replace</key>
 				<data>
 				AgQJAAAIAACHAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Boot graphics glitch, 10.10.2/10.10.3</string>
+				<key>Find</key>
+				<data>
+				QYjE6xE=
+				</data>
+				<key>Name</key>
+				<string>disabled:IOGraphicsFamily</string>
+				<key>Replace</key>
+				<data>
+				QYjE6zE=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0105(12), 0x0a260005 0x0a260006, 0x0d220003, 0x0a2e000a, 0x0a26000a</string>
+				<key>Find</key>
+				<data>
+				AQUJAAAEAACHAAAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>
+				AQUSAAAIAACHAAAA
 				</data>
 			</dict>
 		</array>

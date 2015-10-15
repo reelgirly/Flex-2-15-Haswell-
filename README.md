@@ -57,7 +57,7 @@ Then install these necessary kexts.
 - https://github.com/RehabMan/OS-X-Realtek-Network
 - https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller
 - https://github.com/the-darkvoid/EAPD-Codec-Commander
-- http://www.insanelymac.com/forum/topic/298663-applehda-for-yosemite/ choose **AppleHDA-272.18.1-ALC233.zip**
+- http://www.insanelymac.com/forum/topic/298663-applehda-for-yosemite/ choose *AppleHDA-272.18.1-ALC233.zip*
 
 Copy to /EFI/CLOVER/kexts/10.10:
 
@@ -85,13 +85,13 @@ Install to /System/Library/Extensions with "Kext Wizard":
 After being ready, repair permissions with DiskUtility and reboot into Clover.
 
 
-**Must Read Guide**
+**Necessary Tools**
 
-Download latest RehabMan-MaciASL-*.zip and RehabMan-patchmatic-*.zip from:
+Download latest *RehabMan-MaciASL-.zip* and *RehabMan-patchmatic-.zip* from:
 
 https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads
 
-And latest iasl.zip (Unzip and copy "iasl" to "/usr/bin") from:
+And latest *iasl.zip* (Unzip and copy "iasl" to "/usr/bin") from:
 
 https://bitbucket.org/RehabMan/acpica/downloads
 
@@ -174,7 +174,7 @@ Get into DSDT/SSDT patching after installing the necessary tools from above. Rea
 
 If all files compiled without errors open terminal again in folder where the files are located and compile them all at once by "iasl *.dsl".
 
-Now copy ur compiled **AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition
+Now copy your compiled **AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
 
 You should have there:
 
@@ -191,6 +191,10 @@ You should have there:
 
 Follow this Guide to complete native power management.
 - http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html
+
+Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
+
+Reboot.
 
 
 **Plists to replace:**
@@ -213,7 +217,7 @@ Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.k
 
 **Backup kexts before if anything goes wrong.**
 
-Use Texteditor or Plisteditor (TextWrangler for example; allows editing Systemfiles by unlocking)
+Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Systemfiles by unlocking)
 
 AppleGraphicsPowerManagement.kext/changes.txt
 - put lowest GPUFrequency to 200Mhz and enable all powerstates
@@ -233,6 +237,8 @@ IOBluetoothFamily.kext/changes.txt
 - keeps LogitechControlCenter working to use a Logitech USB Mouse
 
 Find and Delete mentioned kexts from /System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns
+
+**After being ready, repair permissions with DiskUtility and rebuild KernelCaches with "Kext Wizard" and reboot.**
 
 
 **ICC-Profile:**
