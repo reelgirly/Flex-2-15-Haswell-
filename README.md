@@ -87,14 +87,29 @@ After being ready, repair permissions with DiskUtility and reboot into Clover.
 
 **Must Read Guide**
 
-Get into DSDT/SSDT patching and install the necessary tools from this guide. Also implement the needed repository into MaciASL.
+Download latest RehabMan-MaciASL-*.zip and RehabMan-patchmatic-*.zip from:
+
+https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads
+
+And latest iasl.zip (Unzip and copy "iasl" to "/usr/bin") from:
+
+https://bitbucket.org/RehabMan/acpica/downloads
+
+Now implement the Rehabman Repository into MaciASL.  Further Instructions are here:
+
+https://github.com/RehabMan/Laptop-DSDT-Patch
+
+
+**Must Read Guide**
+
+Get into DSDT/SSDT patching after installing the necessary tools from above. Read the whole thing to understand what you will do next.
 
 - http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
 
 
 **DSDT/SDDTs:**
 
-- Now reboot into Clover and grep the ACPI files (press fn+F4 and/or F4 at Clover boot screen)
+- Now reboot into Clover and grep the ACPI files (press Fn+F4 and/or F4 at Clover boot screen)
 - files will be placed in /EFI/CLOVER/ACPI/origin
 - move all files to another folder
 - remove everything except DSDT.aml and the SSDT*.aml files
@@ -181,25 +196,43 @@ Follow this Guide to complete native power management.
 **Plists to replace:**
 
 FakeSMC.kext/Info.list
-- in FakeSMC.kext / added FANs and AC with 60W
+- added FANs and AC with 60W
+
+Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents.
+
 
 VoodooPS2Keyboard.kext/Info.plist
 - located in VoodooPS2Controller.kext/Contents/PlugIns
 - edited keymap for Flex 2-15
 
+Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents.
+
+
 
 **Kexts to patch by hand:**
 
+**Backup kexts before if anything goes wrong.**
+
+Use Texteditor or Plisteditor (TextWrangler for example; allows editing Systemfiles by unlocking)
+
 AppleGraphicsPowerManagement.kext/changes.txt
 - put lowest GPUFrequency to 200Mhz and enable all powerstates
+
+Find and Replace necessary parts in /System/Library/Extensions/AppleGraphicsPowerManagement.kext/Contents/Info.plist
+
 
 AppleUSBCardReader.kext/changes.txt
 - located in AppleStorageDrivers.kext/Contents/PlugIns
 - make internal SDCardReader Apple compatible
 
+Find and Replace necessary parts in /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext/Contents/Info.plist
+
+
 IOBluetoothFamily.kext/changes.txt
 - keeps USB 2.0 working if you are not having an AirPort compatible wifi card
 - keeps LogitechControlCenter working to use a Logitech USB Mouse
+
+Find and Delete mentioned kexts from /System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns
 
 
 **ICC-Profile:**
