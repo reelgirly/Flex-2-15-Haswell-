@@ -1,0 +1,43 @@
+# Rename KBD0 to PS2K
+into device label KBD0 set_label begin PS2K end;
+into_all all code_regex KBD0 replaceall_matched begin PS2K end;
+
+# Override DSDT oemId (for Clover, since it patches with "Apple ")
+# using U430 so it works with patched Info.plist
+into method label _DSM parent_label PS2K remove_entry;
+into device label PS2K insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "RM,oem-id", "LENOVO",\n
+        "RM,oem-table-id", "U430",\n
+    })\n
+}\n
+end;
+
+# Make EC-based brightness up/down work with RehabMan VoodooPS2 ACPI keyboard mechanism
+
+# _Q1C (Fn+F11) called on brightness down key
+into method label _Q1C replace_content
+begin
+    // e06c: code for brightness up\n
+    Notify (\_SB.PCI0.LPCB.PS2K, 0x046c)\n
+end;
+
+# _Q1D (Fn+F12) called on brightness up key
+into method label _Q1D replace_content
+begin
+    // e06b: code for brightness down\n
+    Notify (\_SB.PCI0.LPCB.PS2K, 0x046b)\n
+end;
+
+# change F7
+into method label _Q28 replace_content
+begin
+    // e067 will be mapped to either F7 (41) or itself\n
+    // Notify (\_SB.PCI0.LPCB.PS2K, 0x0467)\n
+    Notify (\_SB.PCI0.LPCB.PS2K, 0x0440)\n
+end;
