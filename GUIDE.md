@@ -173,7 +173,7 @@ Get into DSDT/SSDT patching after installing the necessary tools from above. Rea
 
 If all files compiled without errors, open terminal pointing to the folder where all files located and compile them all at once by using "iasl *.dsl"
 
-Now copy your compiled **AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
+Now copy only your **patched AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
 
 You should have there:
 
@@ -199,14 +199,14 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 **FakeSMC.kext**
 - added FANs and AC with 60W
 
-> Copy here attached [Info.plist](FakeSMC.kext/Info.list) into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents.
+> Copy here attached [Info.plist](FakeSMC.kext/Info.list) into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents
 
 
 **VoodooPS2Keyboard.kext**
 - located in VoodooPS2Controller.kext/Contents/PlugIns
 - edited keymap for Flex 2-15
 
-> Copy here attached [Info.plist](VoodooPS2Keyboard.kext/Info.plist) into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents.
+> Copy here attached [Info.plist](VoodooPS2Keyboard.kext/Info.plist) into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents
 
 
 ### **Kexts to patch by hand:**
@@ -215,20 +215,20 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 
 Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Systemfiles by unlocking)
 
-**AppleGraphicsPowerManagement.kext/changes.txt**
+**[AppleGraphicsPowerManagement.kext](AppleGraphicsPowerManagement.kext/changes.txt)**
 - put lowest GPUFrequency to 200Mhz and enable all powerstates
 
 > Find and Replace necessary parts in /System/Library/Extensions/AppleGraphicsPowerManagement.kext/Contents/Info.plist
 
 
-**AppleUSBCardReader.kext/changes.txt**
+**[AppleUSBCardReader.kext](AppleUSBCardReader.kext/changes.txt)**
 - located in AppleStorageDrivers.kext/Contents/PlugIns
 - make internal SDCardReader Apple compatible
 
 > Find and Replace necessary parts in /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext/Contents/Info.plist
 
 
-**IOBluetoothFamily.kext/changes.txt**
+**[IOBluetoothFamily.kext](IOBluetoothFamily.kext/changes.txt)**
 - keeps USB 2.0 working if you are not having an AirPort compatible wifi card
 - keeps LogitechControlCenter working to use a Logitech USB Mouse
 
@@ -237,7 +237,7 @@ Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Syste
 
 ### **ICC-Profile:**
 
-**display/icc_profile.txt**
-- download from link and put profile into ~/Library/ColorSync/Profiles and apply for internal display
+- download [ICC-Profile](http://www.notebookcheck.com/uploads/tx_nbc2/Monitor_8-5-2014_1.icc)
+ from link and put profile into ~/Library/ColorSync/Profiles and apply for internal display.
 
 **After being ready, repair permissions with DiskUtility and rebuild KernelCaches with "Kext Wizard" and reboot.**
