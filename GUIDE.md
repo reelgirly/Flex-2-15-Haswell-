@@ -176,7 +176,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 >If all files compiled without errors:
 > - Open terminal pointing to the folder where all files located and compile them all at once by using "iasl *.dsl"
 > - And copy only your **patched AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
-> - Or save them OneByOne with MaciASL as AML to /EFI/CLOVER/ACPI/patched
+> - Or save them OneByOne with MaciASL as **AML** to /EFI/CLOVER/ACPI/patched
 
 **You should now have at /EFI/CLOVER/ACPI/patched:**
 
@@ -191,10 +191,21 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 
 ### **Native Powermanagement:**
 
-Follow this Guide to complete native power management.
 [Native Power Management for Laptops](http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html)
 
+Follow this Guide to complete native power management.
 Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
+
+**You should now have at /EFI/CLOVER/ACPI/patched:**
+
+> - DSDT.aml
+- SSDT.aml
+- SSDT-0.aml
+- SSDT-2.aml
+- SSDT-3.aml
+- SSDT-8.aml
+- SSDT-9.aml
+- SSDT-10.aml
 
 
 ### **Plists to replace:**
