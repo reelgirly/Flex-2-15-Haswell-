@@ -12,7 +12,7 @@ Work in Progress
 - Wifi/BT:        RTL8723BE
 - Sound:          Realtek ALC233
 - Nvram:          Native
-
+...
 **Recommend BIOS Settings:**
 
 - Boot Mode:		UEFI only
@@ -20,7 +20,7 @@ Work in Progress
 - xHCI Mode:		Smart Auto
 - Graphics:			Discrete
 - Bootorder:		Create entry with "Easy UEFI" pointing to /EFI/CLOVER/CLOVERX64.efi on your EFI partition
-
+...
 **Install Guide**
 
 - http://www.tonymacx86.com/yosemite-laptop-support/148093-guide-booting-os-x-installer-laptops-clover.html
@@ -39,13 +39,13 @@ After installing OSX and booting into, install Clover into your already existing
 
 **Choose OsxAptioFix2Drv-64.efi instead OsxAptioFixDrv-64.efi when installing clover to your HDDs EFI.**
 
-
+...
 **Clover:**
 
 **clover/config.plist**
 - Now copy the here attached config.plist to /EFI/CLOVER on your EFI partition
 
-
+...
 **Necessary Kexts:**
 
 Then install these necessary kexts.
