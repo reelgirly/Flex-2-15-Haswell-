@@ -23,11 +23,11 @@
 
 ### **Install Guide**
 
-- http://www.tonymacx86.com/yosemite-laptop-support/148093-guide-booting-os-x-installer-laptops-clover.html
+[Booting the OS X installer on LAPTOPS with Clover](http://www.tonymacx86.com/yosemite-laptop-support/148093-guide-booting-os-x-installer-laptops-clover.html)
 
 > To install OSX along to your OEM Windows install,
 first shrink your windows C: partition with
-http://www.disk-partition.com/free-partition-manager.html
+[AMOEI](http://www.disk-partition.com/free-partition-manager.html)
 and then create by your CloverUSB using DiskUtility a "HFS Extended Journaled" partition into the free space.
 Not sure if OneKeyRecovery still working after this as i didnt test it.
 
@@ -103,7 +103,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 
 Get into DSDT/SSDT patching after installing the necessary tools from above. Read the whole thing to understand what you will do next.
 
-- http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
+[Patching LAPTOP DSDT/SSDTs](http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html)
 
 
 ### **DSDT/SDDTs:**
@@ -189,7 +189,7 @@ You should have there:
 ### **Native Powermanagement:**
 
 Follow this Guide to complete native power management.
-- http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html
+[Native Power Management for Laptops](http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html)
 
 Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 
@@ -197,7 +197,7 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 ### **Plists to replace:**
 
 **FakeSMC.kext**
-- added FANs and AC with 60W
+- added FAN and AC with 60W
 
 > Copy attached [Info.plist](FakeSMC.kext/Info.list) into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents
 
@@ -211,7 +211,7 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 
 ### **Kexts to patch by hand:**
 
-**Backup kexts before if anything goes wrong.**
+**Backup kexts before if anything goes wrong or you will later add a compatible Wifi/BT card.**
 
 Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Systemfiles by unlocking)
 
@@ -237,7 +237,6 @@ Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Syste
 
 ### **ICC-Profile:**
 
-- download [ICC-Profile](http://www.notebookcheck.com/uploads/tx_nbc2/Monitor_8-5-2014_1.icc)
- from link and put profile into ~/Library/ColorSync/Profiles and apply for internal display.
+Download this [ICC-Profile](http://www.notebookcheck.com/uploads/tx_nbc2/Monitor_8-5-2014_1.icc) and put profile into ~/Library/ColorSync/Profiles and apply for internal display.
 
 **After being ready, repair permissions with DiskUtility and rebuild KernelCaches with "Kext Wizard" and reboot.**

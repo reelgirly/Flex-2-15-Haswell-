@@ -1,4 +1,4 @@
-**Delete from "IOBluetoothFamily.kext/Contents/PlugIns"**
+Delete from IOBluetoothFamily.kext/Contents/PlugIns
 
 BroadcomBluetoothHostControllerUSBTransport.kext
 CSRBluetoothHostControllerUSBTransport.kext
