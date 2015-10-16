@@ -1,6 +1,16 @@
-# Flex-2-15-Haswell-Yosemite-
+# Flex 2-15 Haswell -Yosemite-
 
 # Work in Progress
+
+> This guide should also cover the Flex 2-14 (Haswell) with BIOS ver. A0CN37WW as they have the same ACPI-Tables.
+
+> Im not responsible for any damage or data loss.
+
+> Follow and read this Guide and the Links inside carefully.
+
+> Ill tried to make things clear as possible but understanding how OSX, Linux and Co is working is recommend.
+
+HF & GL :D
 
 ## **Lenovo Flex 2-15**
 
@@ -11,6 +21,7 @@
 - Lan:            RTL8111/8168/8411
 - Wifi/BT:        RTL8723BE
 - Sound:          Realtek ALC233
+- BIOS:           ver. A0CN37WW
 - Nvram:          Native
 
 ### **Recommend BIOS Settings:**
@@ -19,13 +30,15 @@
 - Secure Boot:	Disabled
 - xHCI Mode:		Smart Auto
 - Graphics:			Discrete
-- Bootorder:		Create entry with "Easy UEFI" pointing to /EFI/CLOVER/CLOVERX64.efi on your EFI partition
+- Sata:         AHCI
+- Bootorder:		Create EFI entry with "Easy UEFI" or Linux pointing to /EFI/CLOVER/CLOVERX64.efi on your EFI partition
 
 ### **Install Guide**
 
 [Booting the OS X installer on LAPTOPS with Clover](http://www.tonymacx86.com/yosemite-laptop-support/148093-guide-booting-os-x-installer-laptops-clover.html)
 
 > **Attention!** make full disk backup before trying to install OSX next to your existing Windows install !!!
+
 > To install OSX along to your OEM Windows install,
 first shrink your windows C: partition with
 [AMOEI](http://www.disk-partition.com/free-partition-manager.html)
@@ -34,7 +47,7 @@ Not sure if OneKeyRecovery still working after this as i didnt test it.
 
 > Now install OSX into the newly created partition.
 
-> After installing OSX and booting into, install Clover into your already existing HDDs EFI partiton as UEFI only.
+> After installing OSX and booting into, install Clover into your already existing HDDs EFI partiton as "UEFI only".
 
 > **Attention!** Rename the folder /EFI/Boot to /EFI/Boot_org to keep your Microsoft efi file before installing Clover.
 
@@ -175,7 +188,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 **SSDT-10.dsl**
 - [syn] Remove _DSM methods
 
->If all files compiled without errors :
+**If all files compiled without errors:**
 
 > 1. Open terminal pointing to the folder where all files located and compile them all at once by using "iasl *.dsl"
 >   - And copy only your **patched AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
@@ -257,4 +270,4 @@ Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Syste
 
 Download this [ICC-Profile](http://www.notebookcheck.com/uploads/tx_nbc2/Monitor_8-5-2014_1.icc) and put profile into ~/Library/ColorSync/Profiles and apply for internal display.
 
-**After being ready, repair permissions with DiskUtility and rebuild KernelCaches with "Kext Wizard" and reboot.**
+**After being ready, repair permissions with DiskUtility and rebuild KernelCaches with "Kext Wizard" and reboot twice.**
