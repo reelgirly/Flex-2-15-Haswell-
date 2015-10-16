@@ -25,6 +25,7 @@
 
 [Booting the OS X installer on LAPTOPS with Clover](http://www.tonymacx86.com/yosemite-laptop-support/148093-guide-booting-os-x-installer-laptops-clover.html)
 
+> **Attention!** make full disk backup before trying to install OSX next to your existing Windows install !!!
 > To install OSX along to your OEM Windows install,
 first shrink your windows C: partition with
 [AMOEI](http://www.disk-partition.com/free-partition-manager.html)
@@ -102,6 +103,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 [Patching LAPTOP DSDT/SSDTs](http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html)
 
 >Get into DSDT/SSDT patching after installing the necessary tools from above.
+
 >Read the whole thing to understand what you will do next.
 
 **After being ready, repair permissions with DiskUtility and reboot into Clover.**
@@ -174,9 +176,9 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 - [syn] Remove _DSM methods
 
 >If all files compiled without errors:
-> - Open terminal pointing to the folder where all files located and compile them all at once by using "iasl *.dsl"
-> - And copy only your **patched AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
-> - Or save them OneByOne with MaciASL as **AML** to /EFI/CLOVER/ACPI/patched
+> 1. Open terminal pointing to the folder where all files located and compile them all at once by using "iasl *.dsl"
+>   - And copy only your **patched AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
+> 2. Or save them OneByOne with MaciASL as **AML** to /EFI/CLOVER/ACPI/patched
 
 **You should now have at /EFI/CLOVER/ACPI/patched:**
 
