@@ -1,8 +1,8 @@
 # Flex-2-15-Haswell-Yosemite-
 
-Work in Progress
+# Work in Progress
 
-**Lenovo Flex 2-15**
+## **Lenovo Flex 2-15**
 
 - CPU:            i3-4030u
 - GFX:            Intel HD 4400
@@ -12,16 +12,16 @@ Work in Progress
 - Wifi/BT:        RTL8723BE
 - Sound:          Realtek ALC233
 - Nvram:          Native
-...
-**Recommend BIOS Settings:**
+
+### **Recommend BIOS Settings:**
 
 - Boot Mode:		UEFI only
 - Secure Boot:	Disabled
 - xHCI Mode:		Smart Auto
 - Graphics:			Discrete
 - Bootorder:		Create entry with "Easy UEFI" pointing to /EFI/CLOVER/CLOVERX64.efi on your EFI partition
-...
-**Install Guide**
+
+### **Install Guide**
 
 - http://www.tonymacx86.com/yosemite-laptop-support/148093-guide-booting-os-x-installer-laptops-clover.html
 
@@ -39,14 +39,14 @@ After installing OSX and booting into, install Clover into your already existing
 
 **Choose OsxAptioFix2Drv-64.efi instead OsxAptioFixDrv-64.efi when installing clover to your HDDs EFI.**
 
-...
-**Clover:**
+
+### **Clover:**
 
 **clover/config.plist**
 - Now copy the here attached config.plist to /EFI/CLOVER on your EFI partition
 
-...
-**Necessary Kexts:**
+
+### **Necessary Kexts:**
 
 Then install these necessary kexts.
 
@@ -85,7 +85,7 @@ Then install these necessary kexts.
 **After being ready, repair permissions with DiskUtility and reboot into Clover.**
 
 
-**Necessary Tools**
+### **Necessary Tools**
 
 Download latest *RehabMan-MaciASL-.zip* and *RehabMan-patchmatic-.zip* from:
 
@@ -100,14 +100,14 @@ Now implement the Rehabman Repository into MaciASL.  Further Instructions are he
 https://github.com/RehabMan/Laptop-DSDT-Patch
 
 
-**Must Read Guide**
+### **Must Read Guide**
 
 Get into DSDT/SSDT patching after installing the necessary tools from above. Read the whole thing to understand what you will do next.
 
 - http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html
 
 
-**DSDT/SDDTs:**
+### **DSDT/SDDTs:**
 
 - Now reboot into Clover and grep the ACPI files (press Fn+F4 and/or F4 at Clover boot screen)
 - files will be placed in /EFI/CLOVER/ACPI/origin
@@ -187,7 +187,7 @@ You should have there:
 - SSDT-10.aml
 
 
-**Native Powermanagement:**
+### **Native Powermanagement:**
 
 Follow this Guide to complete native power management.
 - http://www.tonymacx86.com/yosemite-laptop-support/146870-guide-native-power-management-laptops.html
@@ -210,7 +210,7 @@ Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents
 Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents.
 
 
-**Kexts to patch by hand:**
+### **Kexts to patch by hand:**
 
 **Backup kexts before if anything goes wrong.**
 
@@ -236,7 +236,7 @@ Find and Replace necessary parts in /System/Library/Extensions/AppleStorageDrive
 Find and Delete mentioned kexts from /System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns
 
 
-**ICC-Profile:**
+### **ICC-Profile:**
 
 **display/icc_profile.txt**
 - download from link and put profile into ~/Library/ColorSync/Profiles and apply for internal display
