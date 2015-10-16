@@ -31,18 +31,18 @@ http://www.disk-partition.com/free-partition-manager.html
 and then create by your CloverUSB using DiskUtility a "HFS Extended Journaled" partition into the free space.
 Not sure if OneKeyRecovery still working after this as i didnt test it.
 
-Now install OSX into the newly created partition.
+> Now install OSX into the newly created partition.
 
-After installing OSX and booting into, install Clover into your already existing HDDs EFI partiton as UEFI only.
+> After installing OSX and booting into, install Clover into your already existing HDDs EFI partiton as UEFI only.
 
-**Attention!** Rename the folder /EFI/Boot to /EFI/Boot_org to keep your Microsoft efi file before installing Clover.
+> **Attention!** Rename the folder /EFI/Boot to /EFI/Boot_org to keep your Microsoft efi file before installing Clover.
 
 **Choose OsxAptioFix2Drv-64.efi instead OsxAptioFixDrv-64.efi when installing clover to your HDDs EFI.**
 
 
 ### **Clover:**
 
-**clover/config.plist**
+(**clover/config.plist**)
 - Now copy the here attached config.plist to /EFI/CLOVER on your EFI partition
 
 
@@ -143,9 +143,9 @@ Get into DSDT/SSDT patching after installing the necessary tools from above. Rea
 - [igpu] Rename GFX0 to IGPU
 - [igpu] Rename PCI0.GFX0 to PCI0.IGPU
 - [igpu] Rename B0D3 to HDAU
-- patches/dsdt_fan.txt
-- patches/dsdt_keyboard.txt
-- patches/dsdt_nvidia.txt
+- (patches/dsdt_fan.txt)
+- (patches/dsdt_keyboard.txt)
+- (patches/dsdt_nvidia.txt)
 
 **SSDT-0.dsl**
 - [syn] Remove _DSM methods
