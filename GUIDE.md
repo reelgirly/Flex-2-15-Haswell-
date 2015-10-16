@@ -42,7 +42,7 @@ Not sure if OneKeyRecovery still working after this as i didnt test it.
 
 ### **Clover:**
 
-Now copy the here attached **[config.plist](clover/config.plist)** to /EFI/CLOVER on your EFI partition
+Now copy this **[config.plist](clover/config.plist)** to /EFI/CLOVER on your EFI partition
 
 
 ### **Necessary Kexts:**
@@ -81,8 +81,6 @@ Then install these necessary kexts.
 - FakePCIID_XHCIMux.kext
 - IntelBacklight.kext
 
-**After being ready, repair permissions with DiskUtility and reboot into Clover.**
-
 
 ### **Necessary Tools**
 
@@ -106,11 +104,14 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 >Get into DSDT/SSDT patching after installing the necessary tools from above.
 >Read the whole thing to understand what you will do next.
 
+**After being ready, repair permissions with DiskUtility and reboot into Clover.**
+
 
 ### **DSDT/SDDTs:**
 
-- Now reboot into Clover and grep the ACPI files (press Fn+F4 and/or F4 at Clover boot screen)
+- Now in Clover grep the ACPI files (press Fn+F4 and/or F4 at Clover boot screen)
 - files will be placed in /EFI/CLOVER/ACPI/origin
+- boot into your OSX
 - move all files to another folder
 - remove everything except DSDT.aml and the SSDT*.aml files
 - remove SSDT-1.aml, SSDT-4x.aml
@@ -118,9 +119,9 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 - then delete/move all AML files and just leave the DSL in this folder
 
 
-**After applying all patches to each DSL file check if it compiles without ERRORS and save it.**
+### **Necessary DSDT Patches:**
 
-**Necessary DSDT Patches:**
+**After applying all patches to each DSL file check if it compiles without ERRORS and save it.**
 
 **DSDT.dsl**
 - [syn] Fix ADBG Error
@@ -177,7 +178,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 > - And copy only your **patched AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
 > - Or save them OneByOne with MaciASL as AML to /EFI/CLOVER/ACPI/patched
 
-**You should have at /EFI/CLOVER/ACPI/patched:**
+**You should now have at /EFI/CLOVER/ACPI/patched:**
 
 > - DSDT.aml
 - SSDT-0.aml
