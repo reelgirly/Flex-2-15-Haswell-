@@ -25,7 +25,7 @@
 
 - http://www.tonymacx86.com/yosemite-laptop-support/148093-guide-booting-os-x-installer-laptops-clover.html
 
-To install OSX along to your OEM Windows install,
+> To install OSX along to your OEM Windows install,
 first shrink your windows C: partition with
 http://www.disk-partition.com/free-partition-manager.html
 and then create by your CloverUSB using DiskUtility a "HFS Extended Journaled" partition into the free space.
@@ -61,7 +61,7 @@ Then install these necessary kexts.
 
 **Copy to /EFI/CLOVER/kexts/10.10:**
 
-- FakeSMC.kext
+> - FakeSMC.kext
 - FakePCIID.kext
 - FakePCIID_HD4600_HD4400.kext
 - RealtekRTL8111.kext
@@ -69,7 +69,7 @@ Then install these necessary kexts.
 
 **Install to /System/Library/Extensions with "Kext Wizard":**
 
-- FakeSMC.kext
+> - FakeSMC.kext
 - ACPISensors.kext
 - CPUSensors.kext
 - FakePCIID.kext
@@ -178,7 +178,7 @@ Now copy your compiled **AML** files to /EFI/CLOVER/ACPI/patched on your EFI par
 
 You should have there:
 
-- DSDT.aml
+> - DSDT.aml
 - SSDT-0.aml
 - SSDT-2.aml
 - SSDT-3.aml
@@ -200,14 +200,14 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 **FakeSMC.kext/Info.list**
 - added FANs and AC with 60W
 
-Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents.
+> Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents.
 
 
 **VoodooPS2Keyboard.kext/Info.plist**
 - located in VoodooPS2Controller.kext/Contents/PlugIns
 - edited keymap for Flex 2-15
 
-Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents.
+> Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents.
 
 
 ### **Kexts to patch by hand:**
@@ -219,21 +219,21 @@ Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Syste
 **AppleGraphicsPowerManagement.kext/changes.txt**
 - put lowest GPUFrequency to 200Mhz and enable all powerstates
 
-Find and Replace necessary parts in /System/Library/Extensions/AppleGraphicsPowerManagement.kext/Contents/Info.plist
+> Find and Replace necessary parts in /System/Library/Extensions/AppleGraphicsPowerManagement.kext/Contents/Info.plist
 
 
 **AppleUSBCardReader.kext/changes.txt**
 - located in AppleStorageDrivers.kext/Contents/PlugIns
 - make internal SDCardReader Apple compatible
 
-Find and Replace necessary parts in /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext/Contents/Info.plist
+> Find and Replace necessary parts in /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext/Contents/Info.plist
 
 
 **IOBluetoothFamily.kext/changes.txt**
 - keeps USB 2.0 working if you are not having an AirPort compatible wifi card
 - keeps LogitechControlCenter working to use a Logitech USB Mouse
 
-Find and Delete mentioned kexts from /System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns
+> Find and Delete mentioned kexts from /System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns
 
 
 ### **ICC-Profile:**
