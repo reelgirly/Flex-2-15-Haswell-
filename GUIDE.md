@@ -199,14 +199,14 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 **FakeSMC.kext**
 - added FANs and AC with 60W
 
-> Copy here attached [Info.plist](FakeSMC.kext/Info.list) into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents
+> Copy attached [Info.plist](FakeSMC.kext/Info.list) into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents
 
 
 **VoodooPS2Keyboard.kext**
 - located in VoodooPS2Controller.kext/Contents/PlugIns
 - edited keymap for Flex 2-15
 
-> Copy here attached [Info.plist](VoodooPS2Keyboard.kext/Info.plist) into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents
+> Copy attached [Info.plist](VoodooPS2Keyboard.kext/Info.plist) into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents
 
 
 ### **Kexts to patch by hand:**
