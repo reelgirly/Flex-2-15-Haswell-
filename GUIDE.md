@@ -101,9 +101,10 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 
 ### **Must Read Guide**
 
-Get into DSDT/SSDT patching after installing the necessary tools from above. Read the whole thing to understand what you will do next.
-
 [Patching LAPTOP DSDT/SSDTs](http://www.tonymacx86.com/yosemite-laptop-support/152573-guide-patching-laptop-dsdt-ssdts.html)
+
+>Get into DSDT/SSDT patching after installing the necessary tools from above.
+>Read the whole thing to understand what you will do next.
 
 
 ### **DSDT/SDDTs:**
@@ -117,9 +118,9 @@ Get into DSDT/SSDT patching after installing the necessary tools from above. Rea
 - then delete/move all AML files and just leave the DSL in this folder
 
 
-**Necessary DSDT Patches:**
-
 **After applying all patches to each DSL file check if it compiles without ERRORS and save it.**
+
+**Necessary DSDT Patches:**
 
 **DSDT.dsl**
 - [syn] Fix ADBG Error
@@ -171,11 +172,12 @@ Get into DSDT/SSDT patching after installing the necessary tools from above. Rea
 **SSDT-10.dsl**
 - [syn] Remove _DSM methods
 
-If all files compiled without errors, open terminal pointing to the folder where all files located and compile them all at once by using "iasl *.dsl"
+>If all files compiled without errors:
+> - Open terminal pointing to the folder where all files located and compile them all at once by using "iasl *.dsl"
+> - And copy only your **patched AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
+> - Or save them OneByOne with MaciASL as AML to /EFI/CLOVER/ACPI/patched
 
-Now copy only your **patched AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
-
-You should have there:
+**You should have at /EFI/CLOVER/ACPI/patched:**
 
 > - DSDT.aml
 - SSDT-0.aml
