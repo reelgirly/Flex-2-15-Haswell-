@@ -42,7 +42,7 @@ Not sure if OneKeyRecovery still working after this as i didnt test it.
 
 ### **Clover:**
 
-(**clover/config.plist**)
+**[config.plist](clover/config.plist)**
 - Now copy the here attached config.plist to /EFI/CLOVER on your EFI partition
 
 
@@ -143,9 +143,9 @@ Get into DSDT/SSDT patching after installing the necessary tools from above. Rea
 - [igpu] Rename GFX0 to IGPU
 - [igpu] Rename PCI0.GFX0 to PCI0.IGPU
 - [igpu] Rename B0D3 to HDAU
-- (patches/dsdt_fan.txt)
-- (patches/dsdt_keyboard.txt)
-- (patches/dsdt_nvidia.txt)
+- [dsdt_fan](patches/dsdt_fan.txt)
+- [dsdt_keyboard](patches/dsdt_keyboard.txt)
+- [dsdt_nvidia](patches/dsdt_nvidia.txt)
 
 **SSDT-0.dsl**
 - [syn] Remove _DSM methods
@@ -163,8 +163,8 @@ Get into DSDT/SSDT patching after installing the necessary tools from above. Rea
 - [igpu] Rename GFX0 to IGPU
 - [igpu] Rename PCI0.GFX0 to PCI0.IGPU
 - [igpu] Rename B0D3 to HDAU
-- patches/ssdt-8_graphics.txt
-- patches/ssdt-8_hdmi.txt
+- [ssdt-8_graphics](patches/ssdt-8_graphics.txt)
+- [ssdt-8_hdmi](patches/ssdt-8_hdmi.txt)
 
 **SSDT-9.dsl**
 - patches/ssdt-9_nvidia.txt
