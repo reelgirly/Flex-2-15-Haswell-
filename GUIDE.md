@@ -42,7 +42,7 @@ After installing OSX and booting into, install Clover into your already existing
 
 **Clover:**
 
-clover/config.plist
+**clover/config.plist**
 - Now copy the here attached config.plist to /EFI/CLOVER on your EFI partition
 
 
@@ -59,7 +59,7 @@ Then install these necessary kexts.
 - https://github.com/the-darkvoid/EAPD-Codec-Commander
 - http://www.insanelymac.com/forum/topic/298663-applehda-for-yosemite/ choose *AppleHDA-272.18.1-ALC233.zip*
 
-Copy to /EFI/CLOVER/kexts/10.10:
+**Copy to /EFI/CLOVER/kexts/10.10:**
 
 - FakeSMC.kext
 - FakePCIID.kext
@@ -67,7 +67,7 @@ Copy to /EFI/CLOVER/kexts/10.10:
 - RealtekRTL8111.kext
 - VoodooPS2Controller.kext
 
-Install to /System/Library/Extensions with "Kext Wizard":
+**Install to /System/Library/Extensions with "Kext Wizard":**
 
 - FakeSMC.kext
 - ACPISensors.kext
@@ -82,7 +82,7 @@ Install to /System/Library/Extensions with "Kext Wizard":
 - FakePCIID_XHCIMux.kext
 - IntelBacklight.kext
 
-After being ready, repair permissions with DiskUtility and reboot into Clover.
+**After being ready, repair permissions with DiskUtility and reboot into Clover.**
 
 
 **Necessary Tools**
@@ -197,18 +197,17 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 
 **Plists to replace:**
 
-FakeSMC.kext/Info.list
+**FakeSMC.kext/Info.list**
 - added FANs and AC with 60W
 
 Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents.
 
 
-VoodooPS2Keyboard.kext/Info.plist
+**VoodooPS2Keyboard.kext/Info.plist**
 - located in VoodooPS2Controller.kext/Contents/PlugIns
 - edited keymap for Flex 2-15
 
 Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents.
-
 
 
 **Kexts to patch by hand:**
@@ -217,20 +216,20 @@ Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.k
 
 Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Systemfiles by unlocking)
 
-AppleGraphicsPowerManagement.kext/changes.txt
+**AppleGraphicsPowerManagement.kext/changes.txt**
 - put lowest GPUFrequency to 200Mhz and enable all powerstates
 
 Find and Replace necessary parts in /System/Library/Extensions/AppleGraphicsPowerManagement.kext/Contents/Info.plist
 
 
-AppleUSBCardReader.kext/changes.txt
+**AppleUSBCardReader.kext/changes.txt**
 - located in AppleStorageDrivers.kext/Contents/PlugIns
 - make internal SDCardReader Apple compatible
 
 Find and Replace necessary parts in /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext/Contents/Info.plist
 
 
-IOBluetoothFamily.kext/changes.txt
+**IOBluetoothFamily.kext/changes.txt**
 - keeps USB 2.0 working if you are not having an AirPort compatible wifi card
 - keeps LogitechControlCenter working to use a Logitech USB Mouse
 
@@ -239,7 +238,7 @@ Find and Delete mentioned kexts from /System/Library/Extensions/IOBluetoothFamil
 
 **ICC-Profile:**
 
-display/icc_profile.txt
+**display/icc_profile.txt**
 - download from link and put profile into ~/Library/ColorSync/Profiles and apply for internal display
 
 **After being ready, repair permissions with DiskUtility and rebuild KernelCaches with "Kext Wizard" and reboot.**
