@@ -42,8 +42,7 @@ Not sure if OneKeyRecovery still working after this as i didnt test it.
 
 ### **Clover:**
 
-**[config.plist](clover/config.plist)**
-- Now copy the here attached config.plist to /EFI/CLOVER on your EFI partition
+Now copy the here attached **[config.plist](clover/config.plist)** to /EFI/CLOVER on your EFI partition
 
 
 ### **Necessary Kexts:**
@@ -167,12 +166,12 @@ Get into DSDT/SSDT patching after installing the necessary tools from above. Rea
 - [ssdt-8_hdmi](patches/ssdt-8_hdmi.txt)
 
 **SSDT-9.dsl**
-- patches/ssdt-9_nvidia.txt
+- [ssdt-9_nvidia](patches/ssdt-9_nvidia.txt)
 
 **SSDT-10.dsl**
 - [syn] Remove _DSM methods
 
-If all files compiled without errors open terminal again in folder where the files are located and compile them all at once by "iasl *.dsl".
+If all files compiled without errors, open terminal pointing to the folder where all files located and compile them all at once by using "iasl *.dsl"
 
 Now copy your compiled **AML** files to /EFI/CLOVER/ACPI/patched on your EFI partition.
 
@@ -195,19 +194,19 @@ Follow this Guide to complete native power management.
 Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 
 
-**Plists to replace:**
+### **Plists to replace:**
 
-**FakeSMC.kext/Info.list**
+**FakeSMC.kext**
 - added FANs and AC with 60W
 
-> Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents.
+> Copy here attached [Info.plist](FakeSMC.kext/Info.list) into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents.
 
 
-**VoodooPS2Keyboard.kext/Info.plist**
+**VoodooPS2Keyboard.kext**
 - located in VoodooPS2Controller.kext/Contents/PlugIns
 - edited keymap for Flex 2-15
 
-> Copy here attached Info.plist into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents.
+> Copy here attached [Info.plist](VoodooPS2Keyboard.kext/Info.plist) into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents.
 
 
 ### **Kexts to patch by hand:**
