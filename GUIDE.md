@@ -144,11 +144,11 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 - [sys] Add IMEI
 - [sys] Haswell LPC
 - [usb] USB3 _PRW(0x6D) and Rename XHC to XHC1
-- [usb] 7-series/8-series USB
 - [audio] Audio Layout 3
 - [igpu] Rename GFX0 to IGPU
 - [igpu] Rename PCI0.GFX0 to PCI0.IGPU
 - [igpu] Rename B0D3 to HDAU
+- [dsdt_usb](patches/dsdt_usb.txt)
 - [dsdt_fan](patches/dsdt_fan.txt)
 - [dsdt_keyboard](patches/dsdt_keyboard.txt)
 - [dsdt_nvidia](patches/dsdt_nvidia.txt)
