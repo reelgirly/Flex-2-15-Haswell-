@@ -1,0 +1,3 @@
+# Rename ACST to ACS0
+into device label ACST set_label begin ACS0 end;
+into_all all code_regex ACST replaceall_matched begin ACS0 end;

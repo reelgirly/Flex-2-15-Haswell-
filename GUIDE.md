@@ -164,7 +164,6 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 
 **SSDT-8.dsl**
 - [syn] Remove _DSM methods
-- [igpu] Haswell HD4400/HD4600/HD5000
 - [igpu] Brightness fix (Haswell/Broadwell)
 - [igpu] Rename GFX0 to IGPU
 - [igpu] Rename PCI0.GFX0 to PCI0.IGPU
