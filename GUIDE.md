@@ -66,7 +66,7 @@ Then install these necessary kexts.
 
 > - FakeSMC.kext
 - FakePCIID.kext
-- FakePCIID_HD4600_HD4400.kext
+- FakePCIID_Intel_HD_Graphics.kext
 - RealtekRTL8111.kext
 - VoodooPS2Controller.kext
 
@@ -76,7 +76,7 @@ Then install these necessary kexts.
 - ACPISensors.kext
 - CPUSensors.kext
 - FakePCIID.kext
-- FakePCIID_HD4600_HD4400.kext
+- FakePCIID_Intel_HD_Graphics.kext
 - RealtekRTL8111.kext
 - VoodooPS2Controller.kext
 - ACPIBatteryManager.kext
@@ -220,13 +220,6 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 - added FAN and AC with 60W
 
 > Copy attached [Info.plist](FakeSMC.kext/Info.list) into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents
-
-
-**VoodooPS2Keyboard.kext**
-- located in VoodooPS2Controller.kext/Contents/PlugIns
-- edited keymap for Flex 2-15
-
-> Copy attached [Info.plist](VoodooPS2Keyboard.kext/Info.plist) into /EFI/CLOVER/kexts/10.10/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents and /System/Library/Extensions/VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext/Contents
 
 
 ### **Kexts to patch by hand:**
