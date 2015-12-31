@@ -53,14 +53,13 @@ Now copy this **[config.plist](clover/config.plist)** to /EFI/CLOVER on your EFI
 
 Then install these necessary kexts.
 
-- http://www.hwsensors.com/releases
+- https://github.com/RehabMan/OS-X-FakeSMC-kozlek
 - https://github.com/RehabMan/OS-X-ACPI-Battery-Driver
 - https://github.com/RehabMan/OS-X-Fake-PCI-ID
 - https://github.com/RehabMan/OS-X-Intel-Backlight
 - https://github.com/RehabMan/OS-X-Realtek-Network
 - https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller
 - https://github.com/the-darkvoid/EAPD-Codec-Commander
-- http://www.insanelymac.com/forum/topic/298663-applehda-for-yosemite/ choose *AppleHDA-272.18.1-ALC233.zip*
 
 **Copy to /EFI/CLOVER/kexts/10.10:**
 
@@ -80,10 +79,12 @@ Then install these necessary kexts.
 - RealtekRTL8111.kext
 - VoodooPS2Controller.kext
 - ACPIBatteryManager.kext
-- AppleHDA.kext
 - CodecCommander.kext
 - FakePCIID_XHCIMux.kext
 - IntelBacklight.kext
+- [aDummyAGPM.kext](kexts/aDummyAGPM.kext)
+- [aDummyHDA.kext](kexts/aDummyHDA.kext)
+- [CustomPeripheral.kext](kexts/CustomPeripheral.kext)
 
 
 ### **Necessary Tools**
@@ -216,30 +217,11 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 
 ### **Plists to replace:**
 
-**FakeSMC.kext**
-- added FAN and AC with 60W
-
-> Copy attached [Info.plist](FakeSMC.kext/Info.list) into /EFI/CLOVER/kexts/10.10/FakeSMC.kext/Contents and /System/Library/Extensions/FakeSMC.kext/Contents
-
-
 ### **Kexts to patch by hand:**
 
 **Backup kexts before if anything goes wrong or you will later add a compatible Wifi/BT card.**
 
 Use Texteditor or Plisteditor (TextWrangler for example; allows editing of Systemfiles by unlocking)
-
-**[AppleGraphicsPowerManagement.kext](AppleGraphicsPowerManagement.kext/changes.txt)**
-- put lowest GPUFrequency to 200Mhz and enable all powerstates
-
-> Find and Replace necessary parts in /System/Library/Extensions/AppleGraphicsPowerManagement.kext/Contents/Info.plist
-
-
-**[AppleUSBCardReader.kext](AppleUSBCardReader.kext/changes.txt)**
-- located in AppleStorageDrivers.kext/Contents/PlugIns
-- make internal SDCardReader Apple compatible
-
-> Find and Replace necessary parts in /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext/Contents/Info.plist
-
 
 **[IOBluetoothFamily.kext](IOBluetoothFamily.kext/changes.txt)**
 - keeps USB 2.0 working if you are not having an AirPort compatible wifi card
