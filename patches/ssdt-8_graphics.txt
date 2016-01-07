@@ -18,18 +18,50 @@ Method (_DSM, 4, NotSerialized)\n
 }\n
 end;
 
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_PNLF.txt
+
+# This patch enables the brightness slider in SysPrefs->Displays
+# and will also enable activation of sleep mode by closing
+# the laptop lid.
+
+# This patch is a "basic" PNLF patch and doesn't attempt
+# to fix various common problems with the backlight control.
+#
+# For advanced patches, see:
+#   graphics_PNLF_ivy_sandy.txt
+#   graphics_PNLF_haswell.txt
+#
+
+into_all device label PNLF remove_entry;
+into definitionblock code_regex . insert
+begin
+Scope (_SB)\n
+{\n
+    Device (PNLF)\n
+    {\n
+        Name (_ADR, Zero)\n
+        Name (_HID, EisaId ("APP0002"))\n
+        Name (_CID, "backlight")\n
+        Name (_UID, 10)\n
+        Name (_STA, 0x0B)\n
+    }\n
+}\n
+end;
+
+
 #
 # Make a slight change to the backlight patch...
 # by changing LMAX to 0, will use the BIOS value (0x3a9)
 #
-into device label PNLF code_regex Name.*\(LMAX,.*\) replace_matched begin Name(LMAX, 0) end;
+#into device label PNLF code_regex Name.*\(LMAX,.*\) replace_matched begin Name(LMAX, 0) end;
 
 #
 # Make another slight change.
 # by changing XOPT=6, we enable IntelBacklightHandler even on Yosemite (and prior)
 # normally, it would be used only on 10.11.
 #
-into device label PNLF code_regex Name.*\(XOPT,.*\) replace_matched begin Name(XOPT, 0x06) end;
+#into device label PNLF code_regex Name.*\(XOPT,.*\) replace_matched begin Name(XOPT, 0x06) end;
 
 #
 # Override some properties for IntelBacklight.kext

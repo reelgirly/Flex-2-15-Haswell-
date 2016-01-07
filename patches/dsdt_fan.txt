@@ -25,7 +25,7 @@ Device (SMCD)\n
 		If (LEqual (0x03C4, Local0)) { Return (Zero) }\n
         Return (Local0)\n
     }\n
-    */Method (TCPU, 0, Serialized)\n
+    /*Method (TCPU, 0, Serialized)\n
     {\n
                 Store (\_SB.PCI0.LPCB.EC0.THS0, Local0)\n
                 Return (Local0)\n

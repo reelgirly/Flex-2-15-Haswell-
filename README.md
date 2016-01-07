@@ -14,4 +14,4 @@ HF & GL :D
 
 **Many Thanks and Credits are going to:**
 
-TonyMacx86, RehabMan, Miron, darkvoid and all the others who made all this possible.
+TonyMacx86, RehabMan, Slice, Miron, darkvoid and all the others who made all this possible.
