@@ -132,24 +132,22 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 **DSDT.dsl**
 - [syn] Fix ADBG Error
 - [syn] Remove _DSM methods
-- [sys] IRQ Fix
-- [sys] SMBUS Fix
-- [sys] RTC Fix
-- [sys] Shutdown Fix v2
-- [sys] HPET Fix
-- [sys] OS Check Fix (Windows 8)
-- [sys] AC Adapter Fix
+- [sys] Add IMEI
 - [sys] Add MCHC
 - [sys] Fix _WAK Arg0 v2
 - [sys] Fix _WAK IAOE
 - [sys] Fix Mutex with non-zero SyncLevel
-- [sys] Add IMEI
 - [sys] Haswell LPC
+- [sys] HPET Fix
+- [sys] IRQ Fix
+- [sys] OS Check Fix (Windows 8)
+- [sys] RTC Fix
+- [sys] Shutdown Fix v2
+- [sys] SMBUS Fix
 - [usb] USB3 _PRW(0x6D) and Rename XHC to XHC1
 - [usb] 7-series/8-series USB
 - [audio] Audio Layout 3
 - [igpu] Rename GFX0 to IGPU
-- [igpu] Rename PCI0.GFX0 to PCI0.IGPU
 - [igpu] Rename B0D3 to HDAU
 - [dsdt_usb](patches/dsdt_usb.txt)
 - [dsdt_fan](patches/dsdt_fan.txt)
@@ -167,9 +165,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 
 **SSDT-8.dsl**
 - [syn] Remove _DSM methods
-- [igpu] Brightness fix (Haswell/Broadwell)
 - [igpu] Rename GFX0 to IGPU
-- [igpu] Rename PCI0.GFX0 to PCI0.IGPU
 - [igpu] Rename B0D3 to HDAU
 - [ssdt-8_graphics](patches/ssdt-8_graphics.txt)
 - [ssdt-8_hdmi](patches/ssdt-8_hdmi.txt)

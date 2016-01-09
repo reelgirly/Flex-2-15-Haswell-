@@ -34,10 +34,10 @@ end;
 #
 
 into_all device label PNLF remove_entry;
-into definitionblock code_regex . insert
+into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(RMPC,\sPCI_Config[^\}]*\}) remove_matched;
+
+into device name_adr 0x00020000 insert
 begin
-Scope (_SB)\n
-{\n
     Device (PNLF)\n
     {\n
         Name (_ADR, Zero)\n
@@ -46,7 +46,7 @@ Scope (_SB)\n
         Name (_UID, 10)\n
         Name (_STA, 0x0B)\n
     }\n
-}\n
+
 end;
 
 
