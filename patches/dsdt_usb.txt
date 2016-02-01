@@ -1,9 +1,37 @@
 # disable XWAK
-into method label XWAK code_regex ([\s\S]*)(Return[\s\S]*) replace_content
+#into method label XWAK code_regex ([\s\S]*)(Return[\s\S]*) replace_content
+#begin
+#                Return(0)\n
+#                If (LOr (LEqual (XUSB, One), LEqual (XRST, One)))\n
+#                {\n
+#                    XSEL ()\n
+#                }\n
+#end;
+
+# disable XSEL
+into method label XSEL replace_content
 begin
-                Return(0)\n
-                If (LOr (LEqual (XUSB, One), LEqual (XRST, One)))\n
-                {\n
-                    XSEL ()\n
-                }\n
+If (0)\n
+{\n
+    Store (One, XUSB)\n
+    Store (One, XRST)\n
+    Store (Zero, Local0)\n
+    And (PR3, 0xFFFFFFC0, Local0)\n
+    Or (Local0, PR3M, PR3)\n
+    Store (Zero, Local0)\n
+    And (PR2, 0xFFFF8000, Local0)\n
+    Or (Local0, PR2M, PR2)\n
+}\n
+end;
+
+# disable ESEL
+into method label ESEL code_regex replace_content
+begin
+If (0)\n
+{\n
+    And (PR3, 0xFFFFFFC0, PR3)\n
+    And (PR2, 0xFFFF8000, PR2)\n
+    Store (Zero, XUSB)\n
+    Store (Zero, XRST)\n
+}\n
 end;
