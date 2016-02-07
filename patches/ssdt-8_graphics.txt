@@ -34,11 +34,11 @@ begin
         Name (_CID, "backlight")\n
         Name (_UID, 10)\n
         Name (_STA, 0x0B)\n
-        Name(RMCF, Package()\n
+        /*Name(RMCF, Package()\n
         {\n
         "PWMMax", 0, // use BIOS PWM max\n
         "Options", 2, // kWriteLEVWOnSet\n
-        })\n
+        })*/\n
     }\n
 
 end;
