@@ -4,11 +4,9 @@
 #
 # https://github.com/LongSoft/UEFITool/releases
 #
-# OSX CPU Power Management patches
 # Remove lock from MSR 0xE2 register
-#
-# Remove Bios Whitelist
-# Enable HiddenPage an USBAlwaysOn menu entries
+# Remove Bios WifiWhitelist
+# Enable HiddenPage and USBAlwaysOn menu entries
 #
 #----------------------------------------------------------------------------------
 
@@ -23,6 +21,6 @@ F7731B4C-58A2-4DF4-8980-5645D39ECE58 10 P:75080FBAE80F89442430:EB080FBAE80F89442
 608FBD1D-15E1-40C4-9443-662ECC0C07AA 10 P:0A04750C0FB7410666423944:0A0475000FB7410666423944
 608FBD1D-15E1-40C4-9443-662ECC0C07AA 10 P:0A06744449FFC04B8D044048:0A06EB4449FFC04B8D044048
 
-# HiddenPage | Lenovo Flex 2-15 A0CN37WW
+# HiddenPage USBAlwaysOn | Lenovo Flex 2-15 A0CN37WW
 F2CDF4CF-398D-459D-98CE-A925CAD02194 10 O:0x46FA:450A0000
 F2CDF4CF-398D-459D-98CE-A925CAD02194 10 O:0x4768:450A0000
