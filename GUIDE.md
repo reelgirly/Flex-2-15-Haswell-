@@ -82,9 +82,12 @@ Then install these necessary kexts.
 - CodecCommander.kext
 - FakePCIID_XHCIMux.kext
 - IntelBacklight.kext
-- [aDummyAGPM.kext](kexts/aDummyAGPM.kext)
-- [aDummyHDA.kext](kexts/aDummyHDA.kext)
-- [CustomPeripheral.kext](kexts/CustomPeripheral.kext)
+- [aDummyAGPM.kext](kexts/Archiv.zip)
+- [aDummyHDA.kext](kexts/Archiv.zip)
+- [aDummyDVD.kext](kexts/Archiv.zip)
+- [aDummyFTC.kext](kexts/Archiv.zip)
+- [aDummyUSBCR.kext](kexts/Archiv.zip)
+- [FakeSMC.kext](kexts/Archiv.zip)
 
 
 ### **Necessary Tools**
