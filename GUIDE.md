@@ -84,9 +84,7 @@ Then install these necessary kexts.
 - IntelBacklight.kext
 - [aDummyAGPM.kext](kexts/Archiv.zip)
 - [aDummyHDA.kext](kexts/Archiv.zip)
-- [aDummyDVD.kext](kexts/Archiv.zip)
-- [aDummyFTC.kext](kexts/Archiv.zip)
-- [aDummyUSBCR.kext](kexts/Archiv.zip)
+- [CustomPeripheral.kext](kexts/Archiv.zip)
 - [FakeSMC.kext](kexts/Archiv.zip)
 
 
