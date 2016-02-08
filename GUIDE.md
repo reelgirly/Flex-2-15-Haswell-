@@ -124,7 +124,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 - move all files to another folder
 - remove everything except DSDT.aml and the SSDT*.aml files
 - remove SSDT-1.aml, SSDT-4x.aml
-- disassembly all at once by "iasl -da -dl *.aml" in terminal where files are located
+- disassembly all at once by "iasl -da -dl DSDT* SSDT*" in terminal where files are located
 - then delete/move all AML files and just leave the DSL in this folder
 
 
