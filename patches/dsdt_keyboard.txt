@@ -43,6 +43,13 @@ begin
     Notify (\_SB.PCI0.LPCB.PS2K, 0x0440)\n
 end;
 
+# change NovoButton
+#into method label _Q29 replace_content
+#begin
+#    // e067 will be mapped to either F7 (41) or itself\n
+#    // Notify (\_SB.PCI0.LPCB.PS2K, 0x0467)\n
+#    Notify (\_SB.PCI0.LPCB.PS2K, 0x0440)\n
+#end;
 
 into method label _DSM parent_label PS2K remove_entry;
 into device label PS2K insert
@@ -120,8 +127,10 @@ begin
                 {\n
                     Package(){},\n
                     "e063=3f", // Apple Fn\n
-                    "e064=a0", // F14\n
-                    "e065=83", // F15\n
+                    "e064=a0", // Exposed All\n
+                    "e065=83", // Launchpad\n
+                    //"e064=50", // F19\n
+                    //"e065=5a", // F20\n
                     "e040=40", // F17\n
                     "e068=4f", // F18\n
                     "e0f2=65", // special F9\n

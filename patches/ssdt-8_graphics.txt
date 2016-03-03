@@ -1,4 +1,50 @@
-#
+#Maintained by: RehabMan for: Laptop Patches
+#remove_DSM.txt
+
+# To remove all _DSM methods
+# If used, this should be one of the first patches you apply.
+
+into_all method label _DSM remove_entry;
+
+
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_Rename-GFX0.txt
+
+# Note: Most DSDT/SSDTs use GFX0 for the integrated graphics device,
+#  but there are few renegades that use VID or AGP1.
+#  If your DSDT uses VID or AGP1 instead of GFX0, see the
+#  alternate patch "Rename VID/AGP1 to IGPU"
+
+# sometimes there is already IGPU used for other things
+into_all all code_regex IGPU, replaceall_matched begin IGFX, end;
+
+# rename GFX0 -> IGPU for better power management
+into_all all code_regex GFX0\. replaceall_matched begin IGPU. end;
+into_all all code_regex \.GFX0 replaceall_matched begin .IGPU end;
+into_all all code_regex \sGFX0, replaceall_matched begin IGPU, end;
+into_all all code_regex \(GFX0 replaceall_matched begin (IGPU end;
+into_all all label GFX0 set_label begin IGPU end;
+into_all all label _SB.PCI0.GFX0 set_label begin _SB.PCI0.IGPU end;
+into_all all label \_SB.PCI0.GFX0 set_label begin \_SB.PCI0.IGPU end;
+into_all all label _SB.PCI0.GFX0.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
+into_all all label \_SB.PCI0.GFX0.DD02 set_label begin \_SB.PCI0.IGPU.DD02 end;
+into_all all label ^^^GFX0 set_label begin ^^^IGPU end;
+into_all all label ^^GFX0 set_label begin ^^IGPU end;
+into_all all label ^GFX0 set_label begin ^IGPU end;
+
+
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_Rename-B0D3.txt
+
+# for DSDT
+
+into method label _WAK code_regex B0D3 replaceall_matched begin HDAU end;
+into definitionblock code_regex B0D3 replaceall_matched begin HDAU end;
+
+into device label B0D3 set_label begin HDAU end;
+into method label SBCB code_regex B0D3 replaceall_matched begin HDAU end;
+
+
 # Inject "hda-gfx"="onboard-1" for HDMI-audio
 # Inject "model"="Intel HD Graphics 4400"
 #
@@ -14,6 +60,21 @@ Method (_DSM, 4, NotSerialized)\n
         "AAPL,ig-platform-id", Buffer() { 0x06, 0x00, 0x26, 0x0a },\n
         "hda-gfx", Buffer() { "onboard-1" },\n
         "model", Buffer() { "Intel HD Graphics 4400" },\n
+    })\n
+}\n
+end;
+
+# inject "hda-gfx"="onboard-1" into HDAU (B0D3 originally)
+into method label _DSM parent_adr 0x00030000 remove_entry;
+into device name_adr 0x00030000 insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "layout-id", Buffer() { 3, 0x00, 0x00, 0x00 },\n
+        "hda-gfx", Buffer() { "onboard-1" },\n
     })\n
 }\n
 end;
@@ -34,11 +95,5 @@ begin
         Name (_CID, "backlight")\n
         Name (_UID, 10)\n
         Name (_STA, 0x0B)\n
-        /*Name(RMCF, Package()\n
-        {\n
-        "PWMMax", 0, // use BIOS PWM max\n
-        "Options", 2, // kWriteLEVWOnSet\n
-        })*/\n
     }\n
-
 end;

@@ -133,6 +133,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 **DSDT.dsl**
 - [syn] Fix ADBG Error
 - [syn] Remove _DSM methods
+- [sys] AC Adapter Fix
 - [sys] Add IMEI
 - [sys] Add MCHC
 - [sys] Fix _WAK Arg0 v2
@@ -154,6 +155,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 - [dsdt_fan](patches/dsdt_fan.txt)
 - [dsdt_keyboard](patches/dsdt_keyboard.txt)
 - [dsdt_nvidia](patches/dsdt_nvidia.txt)
+- [dsdt_ac](patches/dsdt_ac.txt)
 
 **SSDT-0.dsl**
 - [syn] Remove _DSM methods
@@ -169,7 +171,6 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 - [igpu] Rename GFX0 to IGPU
 - [igpu] Rename B0D3 to HDAU
 - [ssdt-8_graphics](patches/ssdt-8_graphics.txt)
-- [ssdt-8_hdmi](patches/ssdt-8_hdmi.txt)
 
 **SSDT-9.dsl**
 - [ssdt-9_nvidia](patches/ssdt-9_nvidia.txt)
