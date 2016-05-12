@@ -121,7 +121,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 - boot into your OSX
 - move all files to another folder
 - remove everything except DSDT.aml and the SSDT*.aml files
-- remove SSDT-1.aml, SSDT-4x.aml
+- remove SSDT-4x.aml
 - disassembly all at once by "iasl -da -dl DSDT* SSDT*" in terminal where files are located
 - then delete/move all AML files and just leave the DSL in this folder
 
@@ -131,6 +131,11 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 **After applying all patches to each DSL file check if it compiles without ERRORS and save it.**
 
 **DSDT.dsl**
+
+simply use:
+- [AllInOne](patches/dsdt.txt)
+
+or OneByOne patches:
 - [syn] Fix ADBG Error
 - [syn] Remove _DSM methods
 - [sys] AC Adapter Fix
@@ -158,6 +163,9 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 - [dsdt_ac](patches/dsdt_ac.txt)
 
 **SSDT-0.dsl**
+- [syn] Remove _DSM methods
+
+**SSDT-1.dsl**
 - [syn] Remove _DSM methods
 
 **SSDT-2.dsl**
@@ -189,6 +197,7 @@ https://github.com/RehabMan/Laptop-DSDT-Patch
 
 > - DSDT.aml
 - SSDT-0.aml
+- SSDT-1.aml
 - SSDT-2.aml
 - SSDT-3.aml
 - SSDT-8.aml
@@ -208,6 +217,7 @@ Place generated SSDT.aml in /EFI/CLOVER/ACPI/patched.
 > - DSDT.aml
 - SSDT.aml
 - SSDT-0.aml
+- SSDT-1.aml
 - SSDT-2.aml
 - SSDT-3.aml
 - SSDT-8.aml
