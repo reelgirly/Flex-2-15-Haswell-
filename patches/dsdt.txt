@@ -746,3 +746,31 @@ begin
             },\n
         })\n
 end;
+
+
+# Insert Apple USB properties into EHC1
+into device name_adr 0x001D0000 insert
+begin
+Method (MBSD, 0, NotSerialized)\n
+{\n
+    Return (One) // Let AppleUSBODD know that USB SuperDrive is supported on this Mac!\n
+}\n
+end;
+
+# Insert Apple USB properties into EHC2
+into device name_adr 0x001A0000 insert
+begin
+Method (MBSD, 0, NotSerialized)\n
+{\n
+    Return (One) // Let AppleUSBODD know that USB SuperDrive is supported on this Mac!\n
+}\n
+end;
+
+# Insert Apple USB properties into USB 3.0 XHC
+into device name_adr 0x00140000 insert
+begin
+Method (MBSD, 0, NotSerialized)\n
+{\n
+    Return (One) // Let AppleUSBODD know that USB SuperDrive is supported on this Mac!\n
+}\n
+end;
